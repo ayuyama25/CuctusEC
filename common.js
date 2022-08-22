@@ -1,18 +1,35 @@
-window.addEventListener('DOMContentLoaded', function() {
-
+/* ナビゲーション固定 */
+window.addEventListener('scroll', function() {
+  let nav = document.querySelector('.header-bar');
+  let humburger = document.querySelector('.navigation-humburger');
+  if ('scrollingElement' in document) {
+    scrollTop = document.scrollingElement.scrollTop;
+  } else {
+    scrollTop = document.body.scrollTop;
+  }
+  //40pxスクロールしたらアンカーリンクを固定
+  console.log(scrollTop)
+  if (scrollTop > 40) {
+    nav.classList.add("header-bar-fixed");
+    humburger.classList.add("navigation-humburger-adjust");
+  } else {
+    nav.classList.remove("header-bar-fixed");
+    humburger.classList.remove("navigation-humburger-adjust");
+  };
 });
+
+
 
 const helloSwiper = new Swiper(".hello-swiper", {
   slidesPerView: 1,
   spaceBetween: 0,
-  breakpoints: {
-    900: {
-      slidesPerView: 2,
-      spaceBetween: 0,
-    }
-  },
   speed: 300,
-  grabCursor: true,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  effect: 'fade',
+  allowTouchMove: false,
 });
 
 const productSwiper = new Swiper(".product-swiper", {
@@ -24,14 +41,24 @@ const productSwiper = new Swiper(".product-swiper", {
       spaceBetween: 0,
     }
   },
+});
+
+const productsSwiper = new Swiper(".products-swiper", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  breakpoints: {
+    900: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    }
+  },
   speed: 300,
   grabCursor: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
   },
 });
