@@ -22,11 +22,13 @@
 }
 .swiper-slide-item {
   display: inline-block;
-  width: calc((100vw - 80px) / 2);
+  width: calc((100vw - 80px) / 3);
   height: auto;
   box-sizing: border-box;
 }
-
+.viewMore {
+  margin-left: var(--space-product);
+}
 @media screen and (min-width: 900px) {
   .productsWrapper {
     padding-left: 20px;

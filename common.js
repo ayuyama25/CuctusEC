@@ -8,7 +8,6 @@ window.addEventListener('scroll', function() {
     scrollTop = document.body.scrollTop;
   }
   //40pxスクロールしたらアンカーリンクを固定
-  console.log(scrollTop)
   if (scrollTop > 40) {
     nav.classList.add("header-bar-fixed");
     humburger.classList.add("navigation-humburger-adjust");
@@ -18,8 +17,19 @@ window.addEventListener('scroll', function() {
   };
 });
 
+/* ハンバーガーメニュー */
+  const humburgerButtons = document.querySelector('.header-bar-nav');
+  const humburger = document.querySelector('.navigation-humburger');
+  const humburgerIconOpen = document.querySelector('.navigation-icon-open');
+  const humburgerIconClose = document.querySelector('.navigation-icon-close');
+  function toggleClass() {
+    humburger.classList.toggle("navigation-collapse");
+    humburgerIconOpen.classList.toggle("navigation-closed");
+    humburgerIconClose.classList.toggle("navigation-closed");
+  };
+humburgerButtons.addEventListener('click', toggleClass);
 
-
+/* スライダー */
 const helloSwiper = new Swiper(".hello-swiper", {
   slidesPerView: 1,
   spaceBetween: 0,
