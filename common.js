@@ -58,14 +58,9 @@ const productSwiper = new Swiper(".product-swiper", {
 const productsSwiper = new Swiper(".products-swiper", {
   slidesPerView: 1,
   spaceBetween: 0,
-  breakpoints: {
-    900: {
-      slidesPerView: 1,
-      spaceBetween: 0,
-    }
-  },
+  allowTouchMove: true,
+  preventClicks: true,
   speed: 300,
-  grabCursor: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
