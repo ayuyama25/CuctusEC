@@ -84,11 +84,17 @@ p {
   line-height: var(--line-nomal);
 }
 /* spacing */
+.mtop-l {
+  margin-top: var(--space-l);
+}
 .mtop-m {
   margin-top: var(--space-m);
 }
 .mtop-s {
   margin-top: var(--space-s);
+}
+.pb-l {
+  padding-bottom: var(--space-l);
 }
 .pb-m {
   padding-bottom: var(--space-m);
@@ -98,6 +104,9 @@ p {
 }
 .section-title {
   margin-left: var(--space-l);
+}
+.mleft-p {
+  margin-left: var(--space-product);
 }
 /* header */
 .header {
@@ -195,7 +204,24 @@ p {
 .humburgerItem a:hover {
   background-color: var(--color-gray-bg);
 }
-
+/* breadcrumb */
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+}
+.breadcrumb li {
+  line-height: var(--line-title);
+}
+.breadcrumb li a {
+  text-decoration: underline;
+}
+.breadcrumb li::after {
+  content: "/";
+  text-decoration: none;
+  padding-right: 3px;
+  padding-left: 3px;
+  right: 0;
+}
 /* body */
 .main-inner {
   width: 100vw;
@@ -285,6 +311,7 @@ p {
   position: absolute;
   width: 100vw;
   min-height: 50px;
+  margin-bottom: -100px;
   bottom: 0;
   right: 0;
   left: 0;

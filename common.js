@@ -51,6 +51,8 @@ const productSwiper = new Swiper(".product-swiper", {
       spaceBetween: 0,
     }
   },
+  allowSlidePrev: false,
+  allowSlideNext: false,
 });
 
 const productsSwiper = new Swiper(".products-swiper", {
@@ -65,10 +67,26 @@ const productsSwiper = new Swiper(".products-swiper", {
   speed: 300,
   grabCursor: true,
   pagination: {
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
     clickable: true,
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
+  },
+});
+
+const itemsSwiper = new Swiper(".items-swiper", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  pagination: {
+		el: '.swiper-items-pagination',
+		clickable: true,
+		renderBullet: function (index, className) {
+			return '<span class="' + className + '">' + '<img src="../img/item3-' + (index + 1) + '.jpg" alt="">' + '</span>';
+		},
+	},
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 });
